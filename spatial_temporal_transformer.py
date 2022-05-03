@@ -460,13 +460,3 @@ if __name__ == '__main__':
   loss = nn.functional.mse_loss(xx, y)
   loss.backward()
   print(y.shape, loss)
-
-	# for encoder
-	# 训练时head_linear可以不需要了，直接返回后24个时间步的
-	# 测试时for loop，有预测前填0，只取输出对应位置的embedding
-	# for decoder
-	# 可以直接取最后一个也可以用head_linear生成last token
-	# 重新生成位置编码
-	# 训练时同encoder，测试时用for loop，他的代码用target[0]作为decoder第一个输入可能有问题
-
-	# 输入float32
